@@ -7,26 +7,27 @@ import fr.samflix.vaniametrics.api.VaniaMetrics;
 import fr.samflix.vaniametrics.api.VaniaMetricsProvider;
 
 /**
- * Métriques des mobs personnalisés MythicMobs.
+ * MythicMobs custom mob metrics.
  *
- * <p>Apparitions, morts et disparitions : la différence entre les deux dernières dit si le contenu est joué ou perdu.
+ * <p>Spawns, deaths and despawns: the difference between the last two tells whether content is
+ * played or wasted.
  */
 public final class MythicMobsPaper extends JavaPlugin {
 
-	private MythicMobsCollector collecteur;
+	private MythicMobsCollector collector;
 
 	@Override
 	public void onEnable() {
-		VaniaMetrics metriques = VaniaMetricsProvider.get();
-		collecteur = new MythicMobsCollector();
-		metriques.enregistrer(collecteur);
-		Bukkit.getPluginManager().registerEvents(collecteur, this);
+		VaniaMetrics metrics = VaniaMetricsProvider.get();
+		collector = new MythicMobsCollector();
+		metrics.register(collector);
+		Bukkit.getPluginManager().registerEvents(collector, this);
 	}
 
 	@Override
 	public void onDisable() {
-		if (collecteur != null) {
-			VaniaMetricsProvider.chercher().ifPresent(m -> m.retirer(collecteur));
+		if (collector != null) {
+			VaniaMetricsProvider.find().ifPresent(m -> m.unregister(collector));
 		}
 	}
 }
