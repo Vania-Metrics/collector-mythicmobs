@@ -1,0 +1,8 @@
+# What the test server needs besides the core; read by the core's testkit (CollectorTestConfig).
+# The first jar of a list is the target plugin: its version is checked against compatibility.yml.
+collectors: [mob]
+runtime: java21
+plugins:
+  bukkit:
+    - url: https://cdn.modrinth.com/data/NLuc7Jjh/versions/YVgkWAjK/MythicMobs-5.13.0.jar
+      sha512: 3883999f5d1321127cd998819d7f1cea22f9a9b7119ee82fd25db172ea967758c05dc6b6dce9a0bcc6a358cedf3380d7ec81e3d20816de010aedec71d8e50b2a
