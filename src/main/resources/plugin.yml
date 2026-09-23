@@ -9,3 +9,4 @@ api-version: '1.21'
 authors: [mc-vania]
 description: "MythicMobs metrics: spawns, deaths, despawns."
 depend: [VaniaMetrics, MythicMobs]
+folia-supported: true
