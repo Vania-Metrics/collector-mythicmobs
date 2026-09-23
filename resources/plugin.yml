@@ -1,0 +1,10 @@
+# Métriques des mobs personnalisés MythicMobs.
+#
+# Apparitions, morts et disparitions : la différence entre les deux dernières dit si le contenu est joué ou perdu.
+name: VaniaMetrics-MythicMobs
+version: ${version}
+main: fr.samflix.vaniametrics.module.mythicmobs.MythicMobsPaper
+api-version: '1.21'
+authors: [mc-vania]
+description: "Métriques MythicMobs : apparitions, morts, disparitions."
+depend: [VaniaMetrics, MythicMobs]
